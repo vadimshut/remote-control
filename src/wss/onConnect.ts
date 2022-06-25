@@ -1,4 +1,4 @@
-import { WebSocket, WebSocketServer } from 'ws';
+import { WebSocket } from 'ws';
 import { router } from './router';
 
 export const onConnect = (ws: WebSocket) => {
@@ -7,7 +7,7 @@ export const onConnect = (ws: WebSocket) => {
 
     ws.on("message", function (message: Buffer) {
       const receivedCommand = message.toString("utf8").split(" ");
-      router(receivedCommand)       
+      router(receivedCommand, ws)       
     })
     ws.on('close', () => {
         console.log("WS connection lost...\n");

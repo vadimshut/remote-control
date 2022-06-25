@@ -8,8 +8,6 @@ interface IDirections  {
 }
 
 export const moove = (direction: 'up' | 'down' | 'left' | 'right', step: number) => {
-  console.log(direction, step);
-
   robot.setMouseDelay(1);
   const { x, y } = robot.getMousePos();
   const directions: IDirections = {
@@ -23,5 +21,4 @@ export const moove = (direction: 'up' | 'down' | 'left' | 'right', step: number)
     const [x2, y2] = directions[direction]
     robot.moveMouseSmooth(x2, y2)
   }
-  
 };
