@@ -1,7 +1,6 @@
 import { createWebSocketStream, WebSocket } from 'ws';
 import { ExtWebSocket } from '../interfaces/extWs';
 import readable from './readable';
-import { router } from './router';
 
 export const onConnect = (ws: WebSocket) => {
   console.log('New user connected to WS\n');

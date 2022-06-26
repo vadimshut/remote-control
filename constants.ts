@@ -1,2 +1,0 @@
-export const ALTERNATIVE_WSS_PORT = 6000;
-export const ALTERNATIVE_HTTP_PORT = 3500;

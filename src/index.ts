@@ -1,9 +1,9 @@
-import { httpServer } from './src/http_server/index.js';
+import { httpServer } from './http_server/index';
 import { WebSocketServer } from 'ws';
 
-import { getPort } from './src/utils/getPort';
-import { onConnect } from './src/wss/onConnect';
-import { ExtWebSocket } from './src/interfaces/extWs.js';
+import { getPort } from './utils/getPort';
+import { onConnect } from './wss/onConnect';
+import { ExtWebSocket } from './interfaces/extWs';
 
 const HTTP_PORT = getPort('http');
 const WSS_PORT = getPort('wss');

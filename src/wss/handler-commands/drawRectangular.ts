@@ -1,11 +1,11 @@
-import robot from 'robotjs';
+import { setMouseDelay, mouseToggle, moveMouseSmooth } from 'robotjs';
 export const drawRectangular = (x: number, y: number, width: number, height: number) => {
-  robot.setMouseDelay(1);
+  setMouseDelay(1);
 
-  robot.mouseToggle('down');
-  robot.moveMouseSmooth(x, y - height);
-  robot.moveMouseSmooth(x + width, y - height);
-  robot.moveMouseSmooth(x + width, y);
-  robot.moveMouseSmooth(x, y);
-  robot.mouseToggle('up');
+  mouseToggle('down');
+  moveMouseSmooth(x, y - height);
+  moveMouseSmooth(x + width, y - height);
+  moveMouseSmooth(x + width, y);
+  moveMouseSmooth(x, y);
+  mouseToggle('up');
 };

@@ -1,4 +1,4 @@
-import robot from 'robotjs';
+import { setMouseDelay, moveMouse } from 'robotjs';
 
 interface IDirections {
   up: [number, number];
@@ -8,7 +8,7 @@ interface IDirections {
 }
 
 export const moove = (x: number, y: number, direction: 'up' | 'down' | 'left' | 'right', step: number) => {
-  robot.setMouseDelay(1);
+  setMouseDelay(1);
 
   const directions: IDirections = {
     up: [x, y - step],
@@ -19,6 +19,6 @@ export const moove = (x: number, y: number, direction: 'up' | 'down' | 'left' | 
 
   if (direction in directions) {
     const [x2, y2] = directions[direction];
-    robot.moveMouse(x2, y2);
+    moveMouse(x2, y2);
   }
 };
