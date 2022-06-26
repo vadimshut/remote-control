@@ -7,9 +7,9 @@ interface IDirections  {
     right: [number, number];
 }
 
-export const moove = (direction: 'up' | 'down' | 'left' | 'right', step: number) => {
+export const moove = (x:number, y: number, direction: 'up' | 'down' | 'left' | 'right', step: number) => {
   robot.setMouseDelay(1);
-  const { x, y } = robot.getMousePos();
+
   const directions: IDirections = {
     up: [x,y-step],
     down: [x, y + step],
