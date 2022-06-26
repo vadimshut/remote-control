@@ -19,6 +19,6 @@ export const moove = (x:number, y: number, direction: 'up' | 'down' | 'left' | '
 
   if(direction in directions) {
     const [x2, y2] = directions[direction]
-    robot.moveMouseSmooth(x2, y2)
+    robot.moveMouse(x2, y2)
   }
 };
