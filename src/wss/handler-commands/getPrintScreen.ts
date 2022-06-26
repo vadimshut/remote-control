@@ -1,7 +1,7 @@
 import robot from "robotjs";
 import Jimp from "jimp";
 
-export const getPrntScreen = (
+export const getPrintScreen = (
     x: number,
     y: number,
     width: number,

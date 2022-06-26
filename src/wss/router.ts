@@ -3,7 +3,7 @@ import { moove } from './handler-commands/moove';
 import { drawCircle } from './handler-commands/drawCircle';
 import { drawRectangular } from './handler-commands/drawRectangular';
 import { drawSquare } from './handler-commands/drawSquare';
-import { getPrntScreen } from './handler-commands/getPrintScreen';
+import { getPrintScreen } from './handler-commands/getPrintScreen';
 import { IRouter } from '../interfaces/IRouter';
 
 export const router = (): IRouter => { 
@@ -19,7 +19,7 @@ export const router = (): IRouter => {
         draw_rectangle: (width: number, height:number) => drawRectangular(x, y, width, height),
         draw_square: (line: number) => drawSquare(x,y, line),
         prnt_scrn: async () => {
-            const image = await getPrntScreen(x, y, 200, 200)
+            const image = await getPrintScreen(x, y, 200, 200)
             const base64 = await image.getBase64Async(image.getMIME())
             return base64.substring(22)
         }

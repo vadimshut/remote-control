@@ -19,7 +19,7 @@ export default function readable(duplex: Duplex) {
       if(command) {
         const result = await routes[command](x,y)
         duplex.write(`${command} ${result}\0`)
-        console.log(`Result: ${command}`, ...params, 'successfuly');
+        console.log(`Result: ${command}`, ...params, 'successfuly\n');
       }      
            
     } catch (error) {
