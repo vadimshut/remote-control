@@ -1,5 +1,5 @@
 export interface IRouter {
-    [key: string]
+    [key: string]: any
     mouse_up: (_y: number) => void
     mouse_down: (_y: number) => void
     mouse_left: (_x: number) => void
