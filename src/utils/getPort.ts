@@ -1,7 +1,6 @@
 import { config } from 'dotenv';
 import { ALTERNATIVE_WSS_PORT, ALTERNATIVE_HTTP_PORT } from './constants';
 
-
 export const getPort = (subject: 'wss' | 'http') => {
   let port;
   config();
