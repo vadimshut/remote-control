@@ -18,8 +18,11 @@ export default function readable(duplex: Duplex) {
       console.log(`Recieved: ${command},`, ...params);
       if (command) {
         const result = await routes[command](x, y);
-        duplex.write(`${command} ${result}\0`);
-        console.log(`Result: ${command}`, ...params, 'successfuly\n');
+
+        duplex.write(`${command} ${result} \0`);
+        command === 'mouse_position'
+          ? console.log(`Result: ${command}`, result, 'successfuly\n')
+          : console.log(`Result: ${command}`, ...params, 'successfuly\n');
       }
     } catch (error) {
       if (error instanceof Error) console.error(error.message);
